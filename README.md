@@ -62,7 +62,7 @@ We write unit tests for helpers and other functions with `jest`.
 To run the tests, please execute this command:
 
 ```
-yarn test
+npm test
 ```
 
 For further documentation: [jest](https://jestjs.io/)
