@@ -45,3 +45,11 @@ export type Board = {
   unit: Unit | null;
   unitOwner: Player | null;
 }[][];
+
+export type User = {
+  id: number;
+  username: string;
+  games: number;
+  victories: number;
+  date: Date;
+};

@@ -5,7 +5,7 @@
   "main": "src/warchest.js",
   "scripts": {
     "test": "jest",
-    "start": "ts-node src/ts/warchest.ts"
+    "start": "ts-node src/warchest.ts"
   },
   "keywords": [],
   "author": "",
