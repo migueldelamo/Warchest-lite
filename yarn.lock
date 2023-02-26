@@ -698,10 +698,22 @@
     expect "^29.0.0"
     pretty-format "^29.0.0"
 
-"@types/node@*", "@types/node@^18.14.1":
-  version "18.14.1"
-  resolved "https://registry.npmjs.org/@types/node/-/node-18.14.1.tgz"
-  integrity sha512-QH+37Qds3E0eDlReeboBxfHbX9omAcBCXEzswCu6jySP642jiM3cYSIkU/REqwhCUqXdonHFuBfJDiAJxMNhaQ==
+"@types/lodash@*", "@types/lodash@^4.14.191":
+  version "4.14.191"
+  resolved "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.191.tgz"
+  integrity sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==
+
+"@types/lowdb@^1.0.11":
+  version "1.0.11"
+  resolved "https://registry.npmjs.org/@types/lowdb/-/lowdb-1.0.11.tgz"
+  integrity sha512-h99VMxvTuz+VsXUVCCJo4dsps4vbkXwvU71TpmxDoiBU24bJ0VBygIHgmMm+UPoQIFihmV6euRik4z8J7XDJWg==
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/node@*", "@types/node@^18.14.2":
+  version "18.14.2"
+  resolved "https://registry.npmjs.org/@types/node/-/node-18.14.2.tgz"
+  integrity sha512-1uEQxww3DaghA0RxqHx0O0ppVlo43pJhepY51OxuQIKHpjbnYLA7vcdwioNPzIqmC2u3I/dmylcqjlh0e7AyUA==
 
 "@types/prettier@^2.1.5":
   version "2.7.2"
@@ -2060,6 +2072,13 @@ lodash@^4.17.14:
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
+lowdb@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.npmjs.org/lowdb/-/lowdb-5.1.0.tgz"
+  integrity sha512-OEysJ2S3j05RqehEypEv3h6EgdV4Y7LTq7LngRNqe1IxsInOm66/sa3fzoI6mmqs2CC+zIJW3vfncGNv2IGi3A==
+  dependencies:
+    steno "^3.0.0"
+
 lru-cache@^5.1.1:
   version "5.1.1"
   resolved "https://registry.npmjs.org/lru-cache/-/lru-cache-5.1.1.tgz"
@@ -2137,6 +2156,13 @@ node-int64@^0.4.0:
   version "0.4.0"
   resolved "https://registry.npmjs.org/node-int64/-/node-int64-0.4.0.tgz"
   integrity sha512-O5lz91xSOeoXP6DulyHfllpq+Eg00MWitZIbtPfoSEvqIHdl5gfcY6hYzDWnj0qD5tz52PI08u9qUvSVeUBeHw==
+
+node-json-db@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.npmjs.org/node-json-db/-/node-json-db-2.1.4.tgz"
+  integrity sha512-gLPX6scW/vaVPcf+y6gMWZaSAJeNPe1LeuHQVkDfEZDcO4b/Z2yh6lVh6SXheGKz9WfGDVCtgTrfF8h4C8s7kA==
+  dependencies:
+    rwlock "^5.0.0"
 
 node-releases@^2.0.8:
   version "2.0.10"
@@ -2405,6 +2431,11 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
+rwlock@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/rwlock/-/rwlock-5.0.0.tgz"
+  integrity sha512-XgzRqLMfCcm9QfZuPav9cV3Xin5TRcIlp4X/SH3CvB+x5D2AakdlEepfJKDd8ByncvfpcxNWdRZVUl38PS6ZJg==
+
 semver@^6.0.0, semver@^6.3.0:
   version "6.3.0"
   resolved "https://registry.npmjs.org/semver/-/semver-6.3.0.tgz"
@@ -2480,6 +2511,11 @@ stack-utils@^2.0.3:
   integrity sha512-XlkWvfIm6RmsWtNJx+uqtKLS8eqFbxUg0ZzLXqY0caEy9l7hruX8IpiDnjsLavoBgqCCR71TqWO8MaXYheJ3RQ==
   dependencies:
     escape-string-regexp "^2.0.0"
+
+steno@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/steno/-/steno-3.0.0.tgz"
+  integrity sha512-uZtn7Ht9yXLiYgOsmo8btj4+f7VxyYheMt8g6F1ANjyqByQXEE2Gygjgenp3otHH1TlHsS4JAaRGv5wJ1wvMNw==
 
 string-length@^4.0.1:
   version "4.0.2"
