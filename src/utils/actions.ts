@@ -7,10 +7,6 @@ export function isPlaceValid(
   row: number,
   column: number
 ): boolean {
-  // Check if the selected position has alreaddy another unit placed
-  if (board[row][column].unit !== null) {
-    return false;
-  }
   // Check if the row and column are inside the Board
   if (
     row < 0 ||
@@ -18,6 +14,10 @@ export function isPlaceValid(
     column < 0 ||
     column >= board[0].length
   ) {
+    return false;
+  }
+  // Check if the selected position has alreaddy another unit placed
+  if (board[row][column].unit !== null) {
     return false;
   }
   // Check if the selected position has an adjacent controlled zone by the player, to allow the placement
@@ -98,6 +98,16 @@ export function isAttackValid(
     board[endRow][endCol].unitOwner === currentPlayer ||
     board[endRow][endCol].unitOwner === null
   ) {
+    return false;
+  }
+  // Check if the unit can move to the end position
+  const selectedUnitAttackRange = selectedUnit.attack.range;
+  const selectedUnitAttackDirection = selectedUnit.attack.direction;
+  const distance =
+    selectedUnitAttackDirection === "orthogonal"
+      ? Math.abs(startRow - endRow) + Math.abs(startCol - endCol)
+      : Math.max(Math.abs(startRow - endRow), Math.abs(startCol - endCol));
+  if (!selectedUnitAttackRange || distance > selectedUnitAttackRange) {
     return false;
   }
   return true;

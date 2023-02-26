@@ -11,7 +11,7 @@ import {
   Swordsman,
 } from "../types/dataModels";
 
-export function initialSetup() {
+export function initialSetup(boardSize: 5 | 9) {
   const units = [
     Archer,
     Berserker,
@@ -23,7 +23,6 @@ export function initialSetup() {
     Lancer,
   ];
   // Define the game board size
-  let boardSize = 9;
 
   function randomize(max: number): number {
     return Math.floor(Math.random() * max);
@@ -82,7 +81,7 @@ export function initialSetup() {
   // Define the game board
 
   let controlZones: number[][] = [];
-  if (boardSize === 5)
+  if (boardSize === 5) {
     controlZones = [
       [0, 1],
       [1, 1],
@@ -91,6 +90,7 @@ export function initialSetup() {
       [3, 4],
       [4, 3],
     ];
+  }
   if (boardSize === 9) {
     controlZones = [
       [0, 2],
@@ -113,33 +113,33 @@ export function initialSetup() {
       unitOwner: null,
     }))
   );
-
-  board[controlZones[0][0]][controlZones[0][1]] = {
-    controlZone: true,
-    controlledBy: Crow,
-    unit: null,
-    unitOwner: null,
-  };
-  board[controlZones[1][0]][controlZones[1][1]] = {
-    controlZone: true,
-    controlledBy: Crow,
-    unit: null,
-    unitOwner: null,
-  };
-  board[controlZones[9][0]][controlZones[9][1]] = {
-    controlZone: true,
-    controlledBy: Wolf,
-    unit: null,
-    unitOwner: null,
-  };
-  board[controlZones[8][0]][controlZones[8][1]] = {
-    controlZone: true,
-    controlledBy: Wolf,
-    unit: null,
-    unitOwner: null,
-  };
+  if (boardSize === 9) {
+    board[controlZones[0][0]][controlZones[0][1]] = {
+      controlZone: true,
+      controlledBy: Crow,
+      unit: null,
+      unitOwner: null,
+    };
+    board[controlZones[1][0]][controlZones[1][1]] = {
+      controlZone: true,
+      controlledBy: Crow,
+      unit: null,
+      unitOwner: null,
+    };
+    board[controlZones[9][0]][controlZones[9][1]] = {
+      controlZone: true,
+      controlledBy: Wolf,
+      unit: null,
+      unitOwner: null,
+    };
+    board[controlZones[8][0]][controlZones[8][1]] = {
+      controlZone: true,
+      controlledBy: Wolf,
+      unit: null,
+      unitOwner: null,
+    };
+  }
   let currentPlayer = Wolf;
-
   return {
     boardSize,
     Wolf,

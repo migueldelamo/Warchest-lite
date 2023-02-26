@@ -13,7 +13,7 @@ import { initialSetup } from "../utils/initialSetup";
 import { Player, Unit } from "../types";
 import { MOVEMENTS } from "../types/dataModels";
 
-let { boardSize, Wolf, Crow, board, currentPlayer } = initialSetup();
+let { boardSize, Wolf, Crow, board, currentPlayer } = initialSetup(9);
 
 let nextTurnPlayer: Player | null;
 
