@@ -157,3 +157,7 @@ export function hasPlayerLost(board: Board, currentPlayer: Player) {
     currentPlayer.recruitmentZone.length === 0
   );
 }
+
+export function isRoundCompleted(player1: Player, player2: Player) {
+  return player1.turns === player2.turns;
+}

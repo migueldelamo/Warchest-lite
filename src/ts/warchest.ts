@@ -6,6 +6,7 @@ import {
   isAttackValid,
   isMoveValid,
   isPlaceValid,
+  isRoundCompleted,
   printBoard,
 } from "../utils/actions";
 import { initialSetup } from "../utils/initialSetup";
@@ -22,10 +23,10 @@ function takeTurn(): void {
   // Print the game board and player information
   printBoard(board);
   console.log(
-    `${board.map((row, index) => `==`).join("")} ${
+    `${board.map(() => `==`).join("")} ${
       currentPlayer.name
     } (${currentPlayer.name.substring(0, 1).toUpperCase()}) ${board
-      .map((row, index) => `==`)
+      .map(() => `==`)
       .join("")}`
   );
   console.log(
@@ -415,17 +416,23 @@ function takeTurn(): void {
       break;
     }
   }
+  // Check if the game has ended
+  if (finish) {
+    return;
+  }
+
+  currentPlayer.turns++;
   // Switch the player
-  if (!finish) {
-    actionsInTurn = 0;
-    currentPlayer = nextTurnPlayer
+  actionsInTurn = 0;
+
+  currentPlayer =
+    isRoundCompleted(Wolf, Crow) && nextTurnPlayer
       ? nextTurnPlayer
       : currentPlayer === Wolf
       ? Crow
       : Wolf;
-    nextTurnPlayer = null;
-    takeTurn();
-  }
+  nextTurnPlayer = null;
+  takeTurn();
 }
 
 takeTurn();

@@ -60,6 +60,7 @@ export function initialSetup() {
     bag: bag,
     recruitmentZone: [...initialUnits, ...initialUnits],
     discardPile: [],
+    turns: 0,
   };
 
   initialUnits = units.filter((unit) => !initialUnits.includes(unit));
@@ -75,6 +76,7 @@ export function initialSetup() {
     bag: bag,
     recruitmentZone: [...initialUnits, ...initialUnits],
     discardPile: [],
+    turns: 0,
   };
 
   // Define the game board

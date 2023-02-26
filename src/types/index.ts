@@ -32,6 +32,7 @@ export type Unit = {
 export type Player = {
   name: string;
   controlledZones: number;
+  turns: number;
   handUnits: Unit[];
   bag: Unit[];
   recruitmentZone: Unit[];
