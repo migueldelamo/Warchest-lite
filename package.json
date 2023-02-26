@@ -1,0 +1,19 @@
+{
+  "name": "warchest-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/ts/warchest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/ts/warchest.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.14.1",
+    "prompt": "^1.3.0",
+    "prompt-sync": "^4.2.0",
+    "readline": "^1.3.0"
+  }
+}
