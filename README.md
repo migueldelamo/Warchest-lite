@@ -38,7 +38,7 @@ npm start
 
 - eslint
 - jest
-- lowdb
+- node-json-db
 - prompt
 
 ## Development

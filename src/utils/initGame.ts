@@ -4,8 +4,8 @@ const prompt = require("prompt-sync")();
 
 const db = new JsonDB(new Config("src/db/myDataBase.json", true, true, "/"));
 export async function initGame() {
-  const username1: string = prompt("Type username of Player 1: ");
-  const username2: string = prompt("Type username of Player 2: ");
+  const username1: string = prompt("Type username of Wolf Player: ");
+  const username2: string = prompt("Type username of Crow Player: ");
   const data: User[] = await db.getData("/users");
   let user1: User | null, user2: User | null;
   user1 = data.find((user) => user.username === username1) ?? null;
