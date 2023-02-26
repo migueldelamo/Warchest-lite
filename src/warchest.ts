@@ -297,11 +297,7 @@ async function play() {
             console.log("Not valid unit");
             break;
           }
-          // Remove the unit from hand and put in the discard pile
-          currentPlayer.handUnits
-            .splice(currentPlayer.handUnits.indexOf(unit), 1)
-            .filter((u: Unit) => u !== unit);
-          currentPlayer.discardPile.push(unit);
+
           // Check if the unit is Royal
           if (unit.name === "royal") {
             // Ask the user for the unit to recruit
@@ -324,6 +320,13 @@ async function play() {
                 break;
               }
             }
+            // Remove the unit from hand and put in the discard pile
+            currentPlayer.handUnits
+              .splice(currentPlayer.handUnits.indexOf(unit), 1)
+              .filter((u: Unit) => u !== unit);
+            currentPlayer.discardPile.push(unit);
+          } else {
+            console.log("Only royal units can use recruit action");
           }
           actionsInTurn++;
           break;
